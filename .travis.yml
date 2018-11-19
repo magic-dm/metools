@@ -17,6 +17,14 @@ before_script:
 script:
   - npm run build
 
+deploy:
+  provider: pages
+  skip_cleanup: true
+  keep-history: true
+  github_token: ${GH_TOKEN}
+  on: 
+    branch: master
+
 after_script:
   - cd ./dist
   - git init
